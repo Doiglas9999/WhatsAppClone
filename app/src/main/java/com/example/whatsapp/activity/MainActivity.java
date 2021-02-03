@@ -61,11 +61,20 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(this);
         viewPager2.setAdapter(adapter);
 
+
+
         new TabLayoutMediator(tabLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
-                if (tab.getPosition()==2){
-                    tab.setText("status");
+
+                if ( position == 0 ){
+                    tab.setText("Conversas");
+                }
+                if ( position == 1 ){
+                    tab.setText("Status");
+                }
+                if ( position == 2 ){
+                    tab.setText("Contatos");
                 }
 
             }

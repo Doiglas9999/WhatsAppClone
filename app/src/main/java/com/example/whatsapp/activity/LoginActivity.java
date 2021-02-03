@@ -53,14 +53,16 @@ public class LoginActivity extends AppCompatActivity {
                 String emailDigitado = email.getText().toString();
                 String senhaDigitada = senha.getText().toString();
 
-                if (emailDigitado == "" || senhaDigitada == ""){
-                    Toast.makeText(LoginActivity.this,"Por favor revisar os campos e-mail e senha",Toast.LENGTH_LONG).show();
-                }else {
+                try {
                     usuario = new Usuario();
                     usuario.setEmail(emailDigitado);
                     usuario.setSenha(senhaDigitada);
                     validarLogin();
+
+                } catch ( Exception e ){
+                    Toast.makeText(LoginActivity.this,"Por favor revisar os campos e-mail e senha",Toast.LENGTH_LONG).show();
                 }
+
             }
         });
     }
